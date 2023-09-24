@@ -3,6 +3,7 @@ using BuberDinner.Application.Common.Interfaces.Authentication;
 using BuberDinner.Application.Services.Authentication;
 using BuberDinner.Application.Persistence;
 using BuberDinner.Domain.Entities;
+using BuberDinner.Application.Common.Errors;
 public class AuthenticationService : IAuthenticationService
 {
     private readonly IJwtTokenGenerator _jwtTokenGenerator;
@@ -17,7 +18,7 @@ public class AuthenticationService : IAuthenticationService
          //1. Validate the user doesn't already exist
          if(_userRepository.GetUserByEmail(email) != null)
          {
-            throw new Exception("User with given email already exists");
+            throw new DuplicateEmailException();
          }
 
 
