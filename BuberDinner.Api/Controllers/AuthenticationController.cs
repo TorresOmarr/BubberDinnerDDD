@@ -6,7 +6,7 @@ using ErrorOr;
 using MapsterMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using BuberDinner.Domain.Errors;
+using BuberDinner.Domain.Common.Errors;
 using Microsoft.AspNetCore.Authorization;
 
 namespace BuberDinner.Api.Controllers;
