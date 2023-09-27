@@ -12,9 +12,9 @@ public class ErrorsController : ApiController
         Exception? exception = HttpContext.Features.Get<IExceptionHandlerFeature>()?.Error;
         var (statusCode, message) = exception switch
         {
-             IServiceException serviceException => ((int)serviceException.StatusCode, serviceException.ErrorMessage),
+            IServiceException serviceException => ((int)serviceException.StatusCode, serviceException.ErrorMessage),
             _ => (StatusCodes.Status500InternalServerError, "An unexpected error  occurred")
         };
-        return Problem(statusCode: statusCode, title: exception?.Message   );
+        return Problem(statusCode: statusCode, title: message);
     }
 }
