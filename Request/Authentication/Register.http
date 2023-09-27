@@ -5,7 +5,7 @@ Content-Type: application/json
 
 {
     "firstName": "Omar",
-    "lastName": "",
-    "email": "omtorresrgmail.com",
+    "lastName": "Torres",
+    "email": "omtorresr@gmail.com",
     "password": "Amiko1234"
 }
