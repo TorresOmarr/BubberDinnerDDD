@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.Extensions.Options;
 
-namespace BuberDinner.Api.Errors;
+namespace BuberDinner.Api.Commons.Errors;
 
 public class BuberDinnerProblemDetailsFactory : ProblemDetailsFactory
 {
@@ -94,8 +94,8 @@ public class BuberDinnerProblemDetailsFactory : ProblemDetailsFactory
         }
 
         var errors = httpContext?.Items[HttpContextItemsKey.Errors] as List<Error>;
-        
-        if(errors is not null)
+
+        if (errors is not null)
         {
             problemDetails.Extensions.Add("errorCodes", errors.Select(e => e.Code));
         }
